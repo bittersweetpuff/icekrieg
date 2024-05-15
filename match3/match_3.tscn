@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://6s0vf8tjn2nm"]
+
+[ext_resource type="PackedScene" uid="uid://cjxyp52c14x70" path="res://match3/match_3_grid.tscn" id="1_84vyr"]
+
+[node name="Match3" type="SubViewportContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(960, 960)
+render_target_update_mode = 4
+
+[node name="Match3Grid" parent="SubViewport" instance=ExtResource("1_84vyr")]

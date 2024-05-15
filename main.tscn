@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqxjg1cs1trdl"]
+
+[ext_resource type="Texture2D" uid="uid://cio2tnuri1yw8" path="res://sprites/tiles/match3tiles.png" id="1_7wpvf"]
+[ext_resource type="Texture2D" uid="uid://c6hs0170f85hs" path="res://layout.png" id="1_dufmu"]
+[ext_resource type="PackedScene" uid="uid://6s0vf8tjn2nm" path="res://match3/match_3.tscn" id="3_4am7h"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Layout" type="Sprite2D" parent="."]
+position = Vector2(540, 960)
+texture = ExtResource("1_dufmu")
+metadata/_edit_lock_ = true
+
+[node name="BattleFieldContainer" type="SubViewportContainer" parent="."]
+offset_left = 19.0
+offset_top = 164.0
+offset_right = 1077.0
+offset_bottom = 463.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="BattleFieldContainer"]
+handle_input_locally = false
+size = Vector2i(1058, 299)
+render_target_update_mode = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="BattleFieldContainer/SubViewport"]
+texture = ExtResource("1_7wpvf")
+centered = false
+
+[node name="Match3" parent="." instance=ExtResource("3_4am7h")]
+offset_left = 62.0
+offset_top = 758.0
+offset_right = 1022.0
+offset_bottom = 1718.0
