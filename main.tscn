@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqxjg1cs1trdl"]
+[gd_scene load_steps=6 format=3 uid="uid://cqxjg1cs1trdl"]
 
-[ext_resource type="Texture2D" uid="uid://cio2tnuri1yw8" path="res://sprites/tiles/match3tiles.png" id="1_7wpvf"]
 [ext_resource type="Texture2D" uid="uid://c6hs0170f85hs" path="res://layout.png" id="1_dufmu"]
+[ext_resource type="PackedScene" uid="uid://v7poelyucblf" path="res://battlefield/battlefield.tscn" id="2_yevdn"]
 [ext_resource type="PackedScene" uid="uid://6s0vf8tjn2nm" path="res://match3/match_3.tscn" id="3_4am7h"]
+[ext_resource type="PackedScene" uid="uid://3vk58yfsfc4d" path="res://UI/spawn_buttons.tscn" id="4_o65cy"]
+[ext_resource type="PackedScene" uid="uid://jcjd85e6iapd" path="res://UI/point_values.tscn" id="5_dtc64"]
 
 [node name="Main" type="Node2D"]
 
@@ -12,23 +14,28 @@ texture = ExtResource("1_dufmu")
 metadata/_edit_lock_ = true
 
 [node name="BattleFieldContainer" type="SubViewportContainer" parent="."]
-offset_left = 19.0
-offset_top = 164.0
-offset_right = 1077.0
-offset_bottom = 463.0
+offset_left = 56.0
+offset_top = 168.0
+offset_right = 1028.0
+offset_bottom = 504.0
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="BattleFieldContainer"]
 handle_input_locally = false
-size = Vector2i(1058, 299)
+canvas_item_default_texture_filter = 0
+size = Vector2i(972, 336)
 render_target_update_mode = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="BattleFieldContainer/SubViewport"]
-texture = ExtResource("1_7wpvf")
-centered = false
+[node name="Battlefield" parent="BattleFieldContainer/SubViewport" instance=ExtResource("2_yevdn")]
 
 [node name="Match3" parent="." instance=ExtResource("3_4am7h")]
 offset_left = 62.0
 offset_top = 758.0
 offset_right = 1022.0
 offset_bottom = 1718.0
+
+[node name="SpawnButtons" parent="." instance=ExtResource("4_o65cy")]
+position = Vector2(152, 624)
+
+[node name="PointValues" parent="." instance=ExtResource("5_dtc64")]
+position = Vector2(192, 1808)

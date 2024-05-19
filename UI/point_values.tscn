@@ -1,0 +1,132 @@
+[gd_scene load_steps=4 format=3 uid="uid://jcjd85e6iapd"]
+
+[ext_resource type="Texture2D" uid="uid://cpxtptstacxgp" path="res://sprites/tiles/tilesnosymbols.png" id="1_bkuge"]
+[ext_resource type="Script" path="res://UI/point_values.gd" id="1_m6bej"]
+[ext_resource type="FontFile" uid="uid://dukvlrg81dysb" path="res://fonts/upheavtt.ttf" id="2_84knk"]
+
+[node name="PointValues" type="Node2D"]
+script = ExtResource("1_m6bej")
+
+[node name="Color1" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_bkuge")
+hframes = 6
+
+[node name="Label" type="Label" parent="Color1"]
+offset_left = -17.0
+offset_top = -15.0
+offset_right = 19.0
+offset_bottom = 13.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_84knk")
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Color2" type="Sprite2D" parent="."]
+position = Vector2(144, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("1_bkuge")
+hframes = 6
+frame = 1
+
+[node name="Label" type="Label" parent="Color2"]
+offset_left = -17.0
+offset_top = -15.0
+offset_right = 19.0
+offset_bottom = 13.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_84knk")
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Color3" type="Sprite2D" parent="."]
+position = Vector2(288, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("1_bkuge")
+hframes = 6
+frame = 2
+
+[node name="Label" type="Label" parent="Color3"]
+offset_left = -17.0
+offset_top = -15.0
+offset_right = 19.0
+offset_bottom = 13.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_84knk")
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Color4" type="Sprite2D" parent="."]
+position = Vector2(432, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("1_bkuge")
+hframes = 6
+frame = 3
+
+[node name="Label" type="Label" parent="Color4"]
+offset_left = -17.0
+offset_top = -15.0
+offset_right = 19.0
+offset_bottom = 13.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_84knk")
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Color5" type="Sprite2D" parent="."]
+position = Vector2(576, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("1_bkuge")
+hframes = 6
+frame = 4
+
+[node name="Label" type="Label" parent="Color5"]
+offset_left = -17.0
+offset_top = -15.0
+offset_right = 19.0
+offset_bottom = 13.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_84knk")
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Color6" type="Sprite2D" parent="."]
+position = Vector2(720, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("1_bkuge")
+hframes = 6
+frame = 5
+
+[node name="Label" type="Label" parent="Color6"]
+offset_left = -17.0
+offset_top = -15.0
+offset_right = 19.0
+offset_bottom = 13.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_84knk")
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

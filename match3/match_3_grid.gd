@@ -16,7 +16,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
@@ -53,7 +53,7 @@ func _on_grid_tile_clicked(x, y):
 func tile_pressed(x, y):
 	var color = tile_grid[x][y]
 	check_for_delete(x, y, color)
-	claim_tiles()
+	claim_tiles(color)
 	repopulate_grid()
 
 
@@ -62,9 +62,9 @@ func get_tile(x, y):
 
 
 func delete_tile(x, y):
-	var tile = get_tile(x, y)
-	if tile != null:
-		tile.queue_free()
+	var del_tile = get_tile(x, y)
+	if del_tile != null:
+		del_tile.queue_free()
 	
 func check_for_delete(x: int, y: int, color: int):
 	if(tile_grid[x][y] == color):
@@ -97,12 +97,15 @@ func slide_tile(tile, x, y):
 	tile.grid_pos_x = x
 	tile.grid_pos_y = y
 
-func claim_tiles():
+func claim_tiles(color):
+	var count = 0
 	for x in range(grid_size):
 		for y in range(grid_size):
 			if tile_grid[x][y] == -1:
 				delete_tile(x, y)
-				
+				count += 1
+	Score.increase_score(color, count)
+	
 func spawn_and_slide_to(x, y):
 	var spawn_x = x * tile_size
 	var spawn_y = (y * tile_size) - 960
@@ -117,11 +120,9 @@ func spawn_and_slide_to(x, y):
 	slide_tile(newTile, x, y)
 
 func repopulate_grid():
-	print("repopulating")
 	for x in range(0, 5):
 		for y in range(4, -1, -1):
 			if tile_grid[x][y] == -1:
-				print("empty tile at", x, y)
 				for n_y in range(y, -1, -1):
 					if tile_grid[x][n_y] != -1:
 						move_tile(x, n_y, x, y)

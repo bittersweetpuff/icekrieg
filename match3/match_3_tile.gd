@@ -12,7 +12,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
@@ -20,6 +20,6 @@ func _on_tile_pressed():
 	print('Hey its me! ', grid_pos_x, grid_pos_y)
 	tile_clicked.emit(grid_pos_x, grid_pos_y)
 
-func generateNew(color: int):
-	frame = color
+func generateNew(clr: int):
+	frame = clr
 	visible = true

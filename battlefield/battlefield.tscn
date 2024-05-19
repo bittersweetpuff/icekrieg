@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://v7poelyucblf"]
+
+[ext_resource type="Texture2D" uid="uid://b8sn5mthk57lw" path="res://battlefield/battlefield.png" id="1_7yxas"]
+[ext_resource type="Script" path="res://battlefield/battlefield.gd" id="1_lh1r7"]
+[ext_resource type="PackedScene" uid="uid://n575ndi7542v" path="res://battlefield/castle.tscn" id="3_62sx3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxw4c"]
+size = Vector2(64, 96)
+
+[node name="Battlefield" type="Node2D"]
+script = ExtResource("1_lh1r7")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_7yxas")
+centered = false
+
+[node name="SpawnAlly" type="Node2D" parent="."]
+position = Vector2(183, 250)
+
+[node name="SpawnEnemy" type="Node2D" parent="."]
+position = Vector2(947, 248)
+
+[node name="Castle" parent="." instance=ExtResource("3_62sx3")]
+position = Vector2(962, 157)
+team = 2
+
+[node name="Hurtbox" parent="Castle" index="0"]
+position = Vector2(-22, 38)
+shape = SubResource("RectangleShape2D_nxw4c")
+debug_color = Color(0.980392, 0, 0.380392, 0.419608)
+
+[editable path="Castle"]
