@@ -7,7 +7,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	$Color1/Label.text = str(Score.scores[0])
 	$Color2/Label.text = str(Score.scores[1])
 	$Color3/Label.text = str(Score.scores[2])

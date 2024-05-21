@@ -1,12 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqxjg1cs1trdl"]
+[gd_scene load_steps=11 format=3 uid="uid://cqxjg1cs1trdl"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_80v8j"]
 [ext_resource type="Texture2D" uid="uid://c6hs0170f85hs" path="res://layout.png" id="1_dufmu"]
 [ext_resource type="PackedScene" uid="uid://v7poelyucblf" path="res://battlefield/battlefield.tscn" id="2_yevdn"]
 [ext_resource type="PackedScene" uid="uid://6s0vf8tjn2nm" path="res://match3/match_3.tscn" id="3_4am7h"]
 [ext_resource type="PackedScene" uid="uid://3vk58yfsfc4d" path="res://UI/spawn_buttons.tscn" id="4_o65cy"]
 [ext_resource type="PackedScene" uid="uid://jcjd85e6iapd" path="res://UI/point_values.tscn" id="5_dtc64"]
+[ext_resource type="Texture2D" uid="uid://0xqra5cbdr2t" path="res://UI/UIbuttons.png" id="7_yjx34"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvvqt"]
+atlas = ExtResource("7_yjx34")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojlpg"]
+atlas = ExtResource("7_yjx34")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3wl7"]
+atlas = ExtResource("7_yjx34")
+region = Rect2(256, 0, 128, 128)
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_80v8j")
 
 [node name="Layout" type="Sprite2D" parent="."]
 position = Vector2(540, 960)
@@ -39,3 +54,25 @@ position = Vector2(152, 624)
 
 [node name="PointValues" parent="." instance=ExtResource("5_dtc64")]
 position = Vector2(192, 1808)
+
+[node name="ResetButton" type="Button" parent="."]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 148.0
+offset_bottom = 148.0
+icon = SubResource("AtlasTexture_bvvqt")
+flat = true
+
+[node name="MuteButton" type="TextureButton" parent="."]
+offset_left = 936.0
+offset_top = 16.0
+offset_right = 1064.0
+offset_bottom = 144.0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_ojlpg")
+texture_pressed = SubResource("AtlasTexture_y3wl7")
+
+[connection signal="castle_destroyed" from="BattleFieldContainer/SubViewport/Battlefield" to="." method="_on_battlefield_castle_destroyed"]
+[connection signal="spawn" from="SpawnButtons" to="." method="_on_spawn_buttons_spawn"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="toggled" from="MuteButton" to="." method="_on_mute_button_toggled"]

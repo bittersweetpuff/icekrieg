@@ -1,10 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://v7poelyucblf"]
+[gd_scene load_steps=6 format=3 uid="uid://v7poelyucblf"]
 
 [ext_resource type="Texture2D" uid="uid://b8sn5mthk57lw" path="res://battlefield/battlefield.png" id="1_7yxas"]
 [ext_resource type="Script" path="res://battlefield/battlefield.gd" id="1_lh1r7"]
 [ext_resource type="PackedScene" uid="uid://n575ndi7542v" path="res://battlefield/castle.tscn" id="3_62sx3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxw4c"]
+size = Vector2(64, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwl7r"]
 size = Vector2(64, 96)
 
 [node name="Battlefield" type="Node2D"]
@@ -16,18 +19,34 @@ texture = ExtResource("1_7yxas")
 centered = false
 
 [node name="SpawnAlly" type="Node2D" parent="."]
-position = Vector2(183, 250)
+position = Vector2(11, 250)
 
 [node name="SpawnEnemy" type="Node2D" parent="."]
-position = Vector2(947, 248)
+position = Vector2(1071, 248)
 
-[node name="Castle" parent="." instance=ExtResource("3_62sx3")]
-position = Vector2(962, 157)
+[node name="EnemyCastle" parent="." instance=ExtResource("3_62sx3")]
+position = Vector2(911, 195)
 team = 2
 
-[node name="Hurtbox" parent="Castle" index="0"]
-position = Vector2(-22, 38)
+[node name="Hurtbox" parent="EnemyCastle" index="0"]
+position = Vector2(29, 1)
 shape = SubResource("RectangleShape2D_nxw4c")
 debug_color = Color(0.980392, 0, 0.380392, 0.419608)
 
-[editable path="Castle"]
+[node name="GoodCastle" parent="." instance=ExtResource("3_62sx3")]
+position = Vector2(161, 195)
+
+[node name="Hurtbox" parent="GoodCastle" index="0"]
+position = Vector2(22, 2)
+shape = SubResource("RectangleShape2D_pwl7r")
+debug_color = Color(0.980392, 0, 0.380392, 0.419608)
+
+[node name="EnemyResourceTimer" type="Timer" parent="."]
+wait_time = 1.5
+
+[connection signal="castle_destroyed" from="EnemyCastle" to="." method="_on_enemy_castle_castle_destroyed"]
+[connection signal="castle_destroyed" from="GoodCastle" to="." method="_on_good_castle_castle_destroyed"]
+[connection signal="timeout" from="EnemyResourceTimer" to="." method="_on_enemy_resource_timer_timeout"]
+
+[editable path="EnemyCastle"]
+[editable path="GoodCastle"]

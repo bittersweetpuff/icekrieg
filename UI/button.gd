@@ -4,6 +4,8 @@ var type = 0
 var color = 0
 var point_price = 0
 var rng = RandomNumberGenerator.new()
+
+signal spawn_button_pressed(unit_type)
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,7 +13,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Score.scores[color] < point_price:
 		$Button.disabled = true
 	else:
@@ -42,4 +44,6 @@ func randomize_new_button():
 
 
 func _on_button_pressed():
+	Score.decrease_score(color, point_price)
+	spawn_button_pressed.emit(type)
 	randomize_new_button()

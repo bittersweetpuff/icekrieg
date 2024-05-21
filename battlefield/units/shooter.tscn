@@ -1,0 +1,266 @@
+[gd_scene load_steps=14 format=3 uid="uid://dk5wtdnoflc5l"]
+
+[ext_resource type="Script" path="res://battlefield/units/shooter.gd" id="1_hmlp3"]
+[ext_resource type="Texture2D" uid="uid://c686825313eg0" path="res://battlefield/units/shooter.png" id="1_s0pj7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hixdk"]
+size = Vector2(39.5, 78.125)
+
+[sub_resource type="Animation" id="Animation_i1xev"]
+resource_name = "Attack"
+length = 0.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_kvsod"]
+resource_name = "Idle"
+length = 0.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_42b5k"]
+resource_name = "Ninja_Attack"
+length = 0.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -48), Vector2(240, -48)]
+}
+
+[sub_resource type="Animation" id="Animation_lef8b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -48)]
+}
+
+[sub_resource type="Animation" id="Animation_vw7lo"]
+resource_name = "Shooter_Attack"
+length = 0.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 5]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot_bullet"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_didd2"]
+resource_name = "Walk"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_kgh3n"]
+resource_name = "Siege_Wait"
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p3xcm"]
+_data = {
+"Attack": SubResource("Animation_i1xev"),
+"Idle": SubResource("Animation_kvsod"),
+"Ninja_Attack": SubResource("Animation_42b5k"),
+"RESET": SubResource("Animation_lef8b"),
+"Shooter_Attack": SubResource("Animation_vw7lo"),
+"Siege_Wait": SubResource("Animation_kgh3n"),
+"Walk": SubResource("Animation_didd2")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08jaf"]
+size = Vector2(9, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rre3w"]
+size = Vector2(333, 45)
+
+[node name="Shooter" type="CharacterBody2D"]
+script = ExtResource("1_hmlp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -48)
+scale = Vector2(3, 3)
+texture = ExtResource("1_s0pj7")
+hframes = 8
+frame = 6
+
+[node name="Hurtbox" type="CollisionShape2D" parent="."]
+position = Vector2(-45.75, -38.9375)
+shape = SubResource("RectangleShape2D_hixdk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_p3xcm")
+}
+
+[node name="Hitbox" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-49, -45)
+shape = SubResource("RectangleShape2D_08jaf")
+disabled = true
+debug_color = Color(0.980392, 0, 0.368627, 0.419608)
+
+[node name="Detector" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+position = Vector2(121.5, -47.5)
+shape = SubResource("RectangleShape2D_rre3w")
+debug_color = Color(0, 0.65098, 0.0862745, 0.419608)
+
+[node name="InvTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="BulletPosition" type="Marker2D" parent="."]
+position = Vector2(19, -54)
+
+[node name="BulletTarget" type="Marker2D" parent="."]
+position = Vector2(288, -54)
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="area_entered" from="Detector" to="." method="_on_detector_area_entered"]
+[connection signal="body_entered" from="Detector" to="." method="_on_detector_body_entered"]
+[connection signal="timeout" from="InvTimer" to="." method="_on_inv_timer_timeout"]

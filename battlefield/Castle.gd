@@ -3,8 +3,10 @@ extends Area2D
 var damage_effect = preload("res://effects/damage_number.tscn")
 
 @export var team = 1
-var max_hp = 500
-var hp = 500
+var max_hp = 400
+var hp = 400
+
+signal castle_destroyed()
 
 
 # Called when the node enters the scene tree for the first time.
@@ -13,18 +15,19 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func destroy():
-	print("CASTLE DESTROYED!")
+	castle_destroyed.emit()
 	set_deferred("monitorable", false)
 
 
-func take_damage(damage, siege, pushback):
+func take_damage(damage, siege, _pushback):
 	if hp > 0:
-		hp = max(hp - (damage * siege), 0)
-		show_damage_number(damage)
+		var act_damage = damage * siege
+		hp = max(hp - act_damage, 0)
+		show_damage_number(act_damage)
 		if(hp == 0):
 			destroy()
 

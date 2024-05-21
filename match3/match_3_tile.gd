@@ -17,7 +17,6 @@ func _process(_delta):
 
 
 func _on_tile_pressed():
-	print('Hey its me! ', grid_pos_x, grid_pos_y)
 	tile_clicked.emit(grid_pos_x, grid_pos_y)
 
 func generateNew(clr: int):
