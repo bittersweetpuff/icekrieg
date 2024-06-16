@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="234.25415"
+   height="234.25415"
+   viewBox="0 0 61.979742 61.979744"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <rect
+       x="556"
+       y="-1963.9999"
+       width="56"
+       height="91.999992"
+       id="rect2" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(585.5566,399.14014)">
+    <text
+       xml:space="preserve"
+       transform="matrix(1.2151593,0,0,1.2151593,-1264.2197,1999.684)"
+       id="text1"
+       style="font-size:17.3333px;font-family:'Super Comic';-inkscape-font-specification:'Super Comic';text-align:center;white-space:pre;shape-inside:url(#rect2);display:inline;fill:#000080;stroke:#d4aa00;stroke-width:1.22244;stroke-dasharray:none"><tspan
+         x="567.91471"
+         y="-1946.0897"
+         id="tspan1">ICE</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10.9163px;font-family:'Super Comic';-inkscape-font-specification:'Super Comic';text-align:center;text-anchor:middle;fill:#000080;stroke:#d4aa00;stroke-width:0.678206;stroke-dasharray:none"
+       x="-554.30688"
+       y="-355.33282"
+       id="text3"><tspan
+         id="tspan3"
+         style="fill:#000080;stroke:#d4aa00;stroke-width:0.678206;stroke-dasharray:none"
+         x="-554.30688"
+         y="-355.33282">Krieg</tspan></text>
+    <rect
+       style="fill:#0066ff;stroke:#003380;stroke-width:2.41362;stroke-dasharray:none"
+       id="rect15"
+       width="59.566101"
+       height="59.566101"
+       x="-584.34973"
+       y="-397.93332"
+       ry="9.7629824" />
+  </g>
+</svg>

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmttg4grytvcy"
-path="res://.godot/imported/UIbuttons.png-a517c881b071b6b84629ca52e2d63549.ctex"
+uid="uid://clkw2l2xbantk"
+path="res://.godot/imported/wirebox2.png-5bef0900e7ea79806ad09c7d4d4f42fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/UIbuttons.png"
-dest_files=["res://.godot/imported/UIbuttons.png-a517c881b071b6b84629ca52e2d63549.ctex"]
+source_file="res://sprites/source/wirebox2.png"
+dest_files=["res://.godot/imported/wirebox2.png-5bef0900e7ea79806ad09c7d4d4f42fd.ctex"]
 
 [params]
 

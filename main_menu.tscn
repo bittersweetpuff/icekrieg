@@ -1,0 +1,269 @@
+[gd_scene load_steps=9 format=3 uid="uid://bdprbsyiml7yq"]
+
+[ext_resource type="Texture2D" uid="uid://b7gi7ivwha31s" path="res://background.png" id="1_icm7s"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_ucav2"]
+[ext_resource type="Texture2D" uid="uid://c5ysuaq42mnq8" path="res://logo.png" id="2_mk1pq"]
+[ext_resource type="Texture2D" uid="uid://b33dgrtb84igg" path="res://sprites/source/button_box.png" id="3_xpdfy"]
+[ext_resource type="FontFile" uid="uid://dukvlrg81dysb" path="res://fonts/upheavtt.ttf" id="4_4xr7f"]
+
+[sub_resource type="Animation" id="Animation_3ofe5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Title:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Title:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(540, 360)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ChillButton:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(255, 716)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HardcoreButton:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(255, 1077)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ChillButton:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HardcoreButton:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fejl8"]
+resource_name = "Show"
+length = 2.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Title:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Title:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(540, 360), Vector2(540, 420)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ChillButton:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.9, 1.9, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(255, 776), Vector2(255, 716), Vector2(255, 736)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HardcoreButton:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1, 2, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(255, 1137), Vector2(255, 1077), Vector2(255, 1097)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ChillButton:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HardcoreButton:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wnlqq"]
+_data = {
+"RESET": SubResource("Animation_3ofe5"),
+"Show": SubResource("Animation_fejl8")
+}
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_ucav2")
+
+[node name="Backdrop" type="Sprite2D" parent="."]
+texture = ExtResource("1_icm7s")
+centered = false
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(402, -190)
+amount = 400
+lifetime = 10.0
+emission_shape = 3
+emission_rect_extents = Vector2(1080, 180)
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+
+[node name="Title" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(540, 360)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_mk1pq")
+
+[node name="ChillButton" type="TextureButton" parent="."]
+offset_left = 255.0
+offset_top = 716.0
+offset_right = 832.0
+offset_bottom = 1007.0
+disabled = true
+texture_normal = ExtResource("3_xpdfy")
+stretch_mode = 4
+
+[node name="ButtonText" type="Label" parent="ChillButton"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 46.0
+offset_right = 563.0
+offset_bottom = 277.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("4_4xr7f")
+theme_override_font_sizes/font_size = 106
+text = "Chill
+Mode"
+horizontal_alignment = 1
+
+[node name="HardcoreButton" type="TextureButton" parent="."]
+offset_left = 255.0
+offset_top = 1077.0
+offset_right = 832.0
+offset_bottom = 1368.0
+disabled = true
+texture_normal = ExtResource("3_xpdfy")
+stretch_mode = 4
+
+[node name="ButtonText" type="Label" parent="HardcoreButton"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 46.0
+offset_right = 563.0
+offset_bottom = 277.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("4_4xr7f")
+theme_override_font_sizes/font_size = 106
+text = "Insane
+Mode"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wnlqq")
+}
+
+[connection signal="pressed" from="ChillButton" to="." method="_on_chill_button_pressed"]
+[connection signal="pressed" from="HardcoreButton" to="." method="_on_hardcore_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

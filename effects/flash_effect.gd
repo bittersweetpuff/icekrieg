@@ -14,6 +14,12 @@ func _process(_delta):
 func play_effect():
 	$AnimationPlayer.play("Play")
 
+func start_flash():
+	$AnimationPlayer.play("Start")
+	
+func end_flash():
+	$AnimationPlayer.play("End")
+
 
 func _on_animation_player_animation_finished(_anim_name):
 	queue_free()

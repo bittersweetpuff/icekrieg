@@ -64,7 +64,6 @@ func shoot_bullet():
 	bullet.position = $BulletPosition.position
 	if team == 2:
 		bullet.scale.x = -1.0
-	print("Shooting from ", bullet.position, " to ", $BulletTarget.position)
 	bullet.shoot(damage, siege, team, $BulletTarget.position)
 
 func deal_damage(enemy):

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmttg4grytvcy"
-path="res://.godot/imported/UIbuttons.png-a517c881b071b6b84629ca52e2d63549.ctex"
+uid="uid://buw4lvaf4h5bp"
+path="res://.godot/imported/icon.svg-3629612f1967f9e645af99eed2b8b758.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/UIbuttons.png"
-dest_files=["res://.godot/imported/UIbuttons.png-a517c881b071b6b84629ca52e2d63549.ctex"]
+source_file="res://icons/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-3629612f1967f9e645af99eed2b8b758.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

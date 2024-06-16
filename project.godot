@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="Icekrieg"
-run/main_scene="res://main.tscn"
+run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/show_image=false
+config/icon="res://icons/icon.png"
 
 [autoload]
 
@@ -24,8 +25,8 @@ MusicPlayer="*res://sound/music_player.tscn"
 
 window/size/viewport_width=1080
 window/size/viewport_height=1920
-window/size/window_width_override=720
-window/size/window_height_override=1280
+window/size/window_width_override=570
+window/size/window_height_override=1000
 window/stretch/mode="viewport"
 window/handheld/orientation=1
 

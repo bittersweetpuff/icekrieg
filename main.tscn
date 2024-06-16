@@ -1,12 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://cqxjg1cs1trdl"]
+[gd_scene load_steps=21 format=3 uid="uid://cqxjg1cs1trdl"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_80v8j"]
-[ext_resource type="Texture2D" uid="uid://c6hs0170f85hs" path="res://layout.png" id="1_dufmu"]
+[ext_resource type="Texture2D" uid="uid://b7gi7ivwha31s" path="res://background.png" id="2_jljyg"]
 [ext_resource type="PackedScene" uid="uid://v7poelyucblf" path="res://battlefield/battlefield.tscn" id="2_yevdn"]
+[ext_resource type="Texture2D" uid="uid://btoni6www53mn" path="res://sprites/source/pointsbox.png" id="3_2adqb"]
 [ext_resource type="PackedScene" uid="uid://6s0vf8tjn2nm" path="res://match3/match_3.tscn" id="3_4am7h"]
 [ext_resource type="PackedScene" uid="uid://3vk58yfsfc4d" path="res://UI/spawn_buttons.tscn" id="4_o65cy"]
 [ext_resource type="PackedScene" uid="uid://jcjd85e6iapd" path="res://UI/point_values.tscn" id="5_dtc64"]
-[ext_resource type="Texture2D" uid="uid://0xqra5cbdr2t" path="res://UI/UIbuttons.png" id="7_yjx34"]
+[ext_resource type="Texture2D" uid="uid://cmttg4grytvcy" path="res://UI/UIbuttons.png" id="7_yjx34"]
+[ext_resource type="Texture2D" uid="uid://dh244opgpj82s" path="res://sprites/source/frame.png" id="8_fovnc"]
+[ext_resource type="Texture2D" uid="uid://bj5wt4wtx7p3a" path="res://sprites/source/wireboxt.png" id="9_b8xms"]
+[ext_resource type="Texture2D" uid="uid://ta0tum2a7pa0" path="res://victory.png" id="11_uj1sw"]
+[ext_resource type="Texture2D" uid="uid://du4f11ghxeugl" path="res://defeat.png" id="12_qmji4"]
+[ext_resource type="Texture2D" uid="uid://b33dgrtb84igg" path="res://sprites/source/button_box.png" id="13_n6l5b"]
+[ext_resource type="FontFile" uid="uid://dukvlrg81dysb" path="res://fonts/upheavtt.ttf" id="14_krgqx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bvvqt"]
 atlas = ExtResource("7_yjx34")
@@ -20,13 +27,126 @@ region = Rect2(128, 0, 128, 128)
 atlas = ExtResource("7_yjx34")
 region = Rect2(256, 0, 128, 128)
 
+[sub_resource type="Animation" id="Animation_amqq0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.780392)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Result:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayAgainButton:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayAgainButton:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(255, 745)]
+}
+
+[sub_resource type="Animation" id="Animation_hhnaq"]
+resource_name = "Show"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.780392)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Result:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.8), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayAgainButton:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.7, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayAgainButton:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.7, 1.1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(255, 830), Vector2(255, 730.429), Vector2(255, 745)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_puw42"]
+_data = {
+"RESET": SubResource("Animation_amqq0"),
+"Show": SubResource("Animation_hhnaq")
+}
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_80v8j")
 
 [node name="Layout" type="Sprite2D" parent="."]
 position = Vector2(540, 960)
-texture = ExtResource("1_dufmu")
+texture = ExtResource("2_jljyg")
 metadata/_edit_lock_ = true
+
+[node name="Pointsbox" type="Sprite2D" parent="."]
+position = Vector2(552, 1808)
+texture = ExtResource("3_2adqb")
 
 [node name="BattleFieldContainer" type="SubViewportContainer" parent="."]
 offset_left = 56.0
@@ -72,7 +192,69 @@ toggle_mode = true
 texture_normal = SubResource("AtlasTexture_ojlpg")
 texture_pressed = SubResource("AtlasTexture_y3wl7")
 
+[node name="BattlefieldFrame" type="Sprite2D" parent="."]
+position = Vector2(540.5, 336)
+scale = Vector2(3.96484, 2.85938)
+texture = ExtResource("8_fovnc")
+
+[node name="Match3Frame" type="Sprite2D" parent="."]
+position = Vector2(541.77, 1237)
+scale = Vector2(2.05096, 2.048)
+texture = ExtResource("9_b8xms")
+
+[node name="EndGameScreen" type="Node2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="EndGameScreen"]
+offset_left = -79.0
+offset_top = -59.0
+offset_right = 1126.0
+offset_bottom = 2009.0
+color = Color(0, 0, 0, 0.780392)
+
+[node name="Result" type="Node2D" parent="EndGameScreen"]
+position = Vector2(540, 340)
+
+[node name="Vicotry" type="Sprite2D" parent="EndGameScreen/Result"]
+visible = false
+texture = ExtResource("11_uj1sw")
+
+[node name="Defeat" type="Sprite2D" parent="EndGameScreen/Result"]
+visible = false
+texture = ExtResource("12_qmji4")
+
+[node name="PlayAgainButton" type="TextureButton" parent="EndGameScreen"]
+offset_left = 255.0
+offset_top = 745.0
+offset_right = 832.0
+offset_bottom = 1036.0
+disabled = true
+texture_normal = ExtResource("13_n6l5b")
+stretch_mode = 4
+
+[node name="ButtonText" type="Label" parent="EndGameScreen/PlayAgainButton"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 46.0
+offset_right = 563.0
+offset_bottom = 277.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("14_krgqx")
+theme_override_font_sizes/font_size = 106
+text = "Play
+Again"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EndGameScreen"]
+libraries = {
+"": SubResource("AnimationLibrary_puw42")
+}
+
 [connection signal="castle_destroyed" from="BattleFieldContainer/SubViewport/Battlefield" to="." method="_on_battlefield_castle_destroyed"]
 [connection signal="spawn" from="SpawnButtons" to="." method="_on_spawn_buttons_spawn"]
 [connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="toggled" from="MuteButton" to="." method="_on_mute_button_toggled"]
+[connection signal="pressed" from="EndGameScreen/PlayAgainButton" to="." method="_on_play_again_button_pressed"]

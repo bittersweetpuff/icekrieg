@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://6s0vf8tjn2nm"]
+[gd_scene load_steps=3 format=3 uid="uid://6s0vf8tjn2nm"]
 
 [ext_resource type="PackedScene" uid="uid://cjxyp52c14x70" path="res://match3/match_3_grid.tscn" id="1_84vyr"]
+[ext_resource type="Texture2D" uid="uid://ce405u0uorptt" path="res://sprites/source/black_box.png" id="2_mjgi1"]
 
 [node name="Match3" type="SubViewportContainer"]
 offset_right = 40.0
@@ -13,3 +14,8 @@ size = Vector2i(960, 960)
 render_target_update_mode = 4
 
 [node name="Match3Grid" parent="SubViewport" instance=ExtResource("1_84vyr")]
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport"]
+z_index = -4
+scale = Vector2(17, 17)
+texture = ExtResource("2_mjgi1")

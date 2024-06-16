@@ -13,9 +13,11 @@ var rng = RandomNumberGenerator.new()
 var enemy_resources = 0
 var next_enemy = 0
 var enemy_costs = [5, 10, 10, 14]
+var enemy_speed = 1.5
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$EnemyResourceTimer.start()
+	enemy_speed = Score.speed
+	$EnemyResourceTimer.start(enemy_speed)
 	randomize_enemy()
 
 
